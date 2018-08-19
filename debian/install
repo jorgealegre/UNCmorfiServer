@@ -1,0 +1,3 @@
+.build/							usr/src/UNCmorfiServer
+terraform/scripts/install.sh	usr/src/UNCmorfiServer
+terraform/scripts/start.sh		usr/src/UNCmorfiServer
