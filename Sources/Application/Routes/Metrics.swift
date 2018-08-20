@@ -9,11 +9,11 @@ import SwiftMetricsPrometheus
 import LoggerAPI
 
 class MetricsRouter {
-    private init() {}
-
     private var swiftMetrics: SwiftMetrics?
     private var swiftMetricsDash: SwiftMetricsDash?
     private var swiftMetricsPrometheus: SwiftMetricsPrometheus?
+
+    private init() {}
 
     static func setEndpoints(router: Router) {
         do {

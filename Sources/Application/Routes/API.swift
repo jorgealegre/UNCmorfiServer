@@ -44,7 +44,7 @@ class APIRouter {
             switch result {
             case let .success(menu):
                 callback(menu, nil)
-            case let .failure(error):
+            case .failure(_):
                 callback(nil, nil)
             }
         }
@@ -55,7 +55,7 @@ class APIRouter {
             switch result {
             case let .success(servings):
                 callback(servings, nil)
-            case let .failure(error):
+            case .failure(_):
                 callback(nil, nil)
             }
 

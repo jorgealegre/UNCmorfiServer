@@ -14,8 +14,8 @@ import KituraOpenAPI
 public let projectPath = ConfigurationManager.BasePath.project.path
 
 public class App {
-    private let router = Router()
-    private let cloudEnv = CloudEnv()
+    let router = Router()
+    let cloudEnv = CloudEnv()
 
     public init() throws {}
 
@@ -24,14 +24,15 @@ public class App {
         MetricsRouter.setEndpoints(router: router)
         HealthRouter.setEndpoints(router: router)
         APIRouter.setEndpoints(router: router)
+
+        // API documentation
+        KituraOpenAPI.addEndpoints(to: router)
     }
 
     public func run() throws {
         try postInit()
 
-        KituraOpenAPI.addEndpoints(to: router)
         Kitura.addHTTPServer(onPort: cloudEnv.port, with: router)
-
         Kitura.run()
     }
 }
