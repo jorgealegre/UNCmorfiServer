@@ -64,7 +64,7 @@ class UNCComedor {
 
     // MARK: - Public API methods
 
-    func getMenu(callback: @escaping (_ result: Result<[Date:[String]]>) -> Void) {
+    func getMenu(callback: @escaping (_ result: Result<Menu>) -> Void) {
         let task = session.dataTask(with: UNCComedor.baseMenuURL) { data, res, error in
             // Check for errors and exit early.
             let customError = UNCComedor.handleAPIResponse(error: error, res: res)
@@ -115,7 +115,16 @@ class UNCComedor {
                 return
             }
 
-            callback(.success(menu))
+            // For some reason, Kitura encodes a [Date: [String]] dictionary wrong.
+            // Using strings as keys instead in the meantime.
+            let dateFormatter = ISO8601DateFormatter()
+            dateFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+            var uglyMenu: [String: [String]] = [:]
+            for (key, value) in menu {
+                uglyMenu[dateFormatter.string(from: key)] = value
+            }
+
+            callback(.success(Menu(menu: uglyMenu)))
         }
 
         task.resume()
@@ -179,7 +188,7 @@ class UNCComedor {
                 let balance = Int(_5)!
                 let image = _24
 
-                let user = User(name: name, code: code, balance: balance, imageCode: image, expirationDate: Date())
+                let user = User(name: name, code: code, balance: balance, imageCode: image)
 
                 callback(.success(user))
             }
@@ -213,7 +222,7 @@ class UNCComedor {
         }
     }
 
-    func getServings(callback: @escaping (_ result: Result<[Date: Int]>) -> Void) {
+    func getServings(callback: @escaping (_ result: Result<Servings>) -> Void) {
         let task = session.dataTask(with: UNCComedor.baseServingsURL) { data, res, error in
             // Check for errors and exit early.
             let customError = UNCComedor.handleAPIResponse(error: error, res: res)
@@ -307,7 +316,14 @@ class UNCComedor {
                 return result
             }
 
-            callback(.success(result))
+            // TODO this is a workaround of an error with Kitura not encoding Date keys properly.
+            let dateFormatter = ISO8601DateFormatter()
+            dateFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+            var servings: [String: Int] = [:]
+            for (key, value) in result {
+                servings[dateFormatter.string(from: key)] = value
+            }
+            callback(.success(Servings(servings: servings)))
         }
 
         task.resume()

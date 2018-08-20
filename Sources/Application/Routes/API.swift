@@ -39,7 +39,7 @@ class APIRouter {
         }
     }
 
-    private static func getMenu(callback: @escaping ([Date: [String]]?, RequestError?) -> Void) {
+    private static func getMenu(callback: @escaping (Menu?, RequestError?) -> Void) {
         UNCComedor.api.getMenu { result in
             switch result {
             case let .success(menu):
@@ -50,7 +50,7 @@ class APIRouter {
         }
     }
 
-    private static func getServings(callback: @escaping ([Date: Int]?, RequestError?) -> Void) {
+    private static func getServings(callback: @escaping (Servings?, RequestError?) -> Void) {
         UNCComedor.api.getServings { result in
             switch result {
             case let .success(servings):

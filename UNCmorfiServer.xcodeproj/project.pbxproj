@@ -56,6 +56,8 @@
 		5E5DAEB1212B39F700F0C5C6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DAEB0212B39F700F0C5C6 /* User.swift */; };
 		5E5DAEB3212B3A4B00F0C5C6 /* UNCComedor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DAEB2212B3A4B00F0C5C6 /* UNCComedor.swift */; };
 		5E5DAEB5212B3BDC00F0C5C6 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DAEB4212B3BDC00F0C5C6 /* API.swift */; };
+		5E5DAEB7212B653400F0C5C6 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DAEB6212B653400F0C5C6 /* Menu.swift */; };
+		5E5DAEB9212B65B100F0C5C6 /* Servings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DAEB8212B65B100F0C5C6 /* Servings.swift */; };
 		OBJ_1000 /* CloudFoundryEnv.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "CloudFoundryEnv::CloudFoundryEnv::Product" /* CloudFoundryEnv.framework */; };
 		OBJ_1001 /* Configuration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Configuration::Configuration::Product" /* Configuration.framework */; };
 		OBJ_1002 /* FileKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "FileKit::FileKit::Product" /* FileKit.framework */; };
@@ -2703,6 +2705,8 @@
 		5E5DAEB0212B39F700F0C5C6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5E5DAEB2212B3A4B00F0C5C6 /* UNCComedor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNCComedor.swift; sourceTree = "<group>"; };
 		5E5DAEB4212B3BDC00F0C5C6 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		5E5DAEB6212B653400F0C5C6 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		5E5DAEB8212B65B100F0C5C6 /* Servings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Servings.swift; sourceTree = "<group>"; };
 		"CircuitBreaker::CircuitBreaker::Product" /* CircuitBreaker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CircuitBreaker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"CloudEnvironment::CloudEnvironment::Product" /* CloudEnvironment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CloudEnvironment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"CloudFoundryEnv::CloudFoundryEnv::Product" /* CloudFoundryEnv.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CloudFoundryEnv.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -3616,6 +3620,8 @@
 			isa = PBXGroup;
 			children = (
 				5E5DAEB0212B39F700F0C5C6 /* User.swift */,
+				5E5DAEB6212B653400F0C5C6 /* Menu.swift */,
+				5E5DAEB8212B65B100F0C5C6 /* Servings.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -6459,8 +6465,10 @@
 			files = (
 				5E5DAEB3212B3A4B00F0C5C6 /* UNCComedor.swift in Sources */,
 				OBJ_462 /* Application.swift in Sources */,
+				5E5DAEB7212B653400F0C5C6 /* Menu.swift in Sources */,
 				OBJ_464 /* Metrics.swift in Sources */,
 				5E5DAEAE212B39D200F0C5C6 /* Result.swift in Sources */,
+				5E5DAEB9212B65B100F0C5C6 /* Servings.swift in Sources */,
 				5E5DAEB1212B39F700F0C5C6 /* User.swift in Sources */,
 				OBJ_465 /* Health.swift in Sources */,
 				5E5DAEB5212B3BDC00F0C5C6 /* API.swift in Sources */,
@@ -9812,7 +9820,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_NS_ASSERTIONS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-DXcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -9833,7 +9841,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_OPTIMIZATION_LEVEL = s;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				OTHER_SWIFT_FLAGS = "-DXcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
