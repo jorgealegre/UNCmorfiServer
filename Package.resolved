@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "Signals",
+        "repositoryURL": "https://github.com/IBM-Swift/BlueSignals.git",
+        "state": {
+          "branch": null,
+          "revision": "58ec1acfba8fb4bf469ae9f3d633568cb5853305",
+          "version": "1.0.6"
+        }
+      },
+      {
         "package": "Socket",
         "repositoryURL": "https://github.com/IBM-Swift/BlueSocket.git",
         "state": {
@@ -38,6 +47,15 @@
         }
       },
       {
+        "package": "CEpoll",
+        "repositoryURL": "https://github.com/IBM-Swift/CEpoll.git",
+        "state": {
+          "branch": null,
+          "revision": "4e56acbea4d452110236dcbfcee0045a697c0e9f",
+          "version": "1.0.0"
+        }
+      },
+      {
         "package": "CircuitBreaker",
         "repositoryURL": "https://github.com/IBM-Swift/CircuitBreaker.git",
         "state": {
@@ -53,15 +71,6 @@
           "branch": null,
           "revision": "b37c1c69e6a0d4b191eca7c064afcedfd2a1803b",
           "version": "8.0.0"
-        }
-      },
-      {
-        "package": "CommonCrypto",
-        "repositoryURL": "https://github.com/IBM-Swift/CommonCrypto.git",
-        "state": {
-          "branch": null,
-          "revision": "9156d238dbc4c15455b77b45e721b2bb0b995e31",
-          "version": "1.0.0"
         }
       },
       {
@@ -170,6 +179,15 @@
           "branch": null,
           "revision": "5a2361ba1f005596a2bfa28de76ed4acf1e71c33",
           "version": "3.2.4-swift4"
+        }
+      },
+      {
+        "package": "OpenSSL",
+        "repositoryURL": "https://github.com/IBM-Swift/OpenSSL.git",
+        "state": {
+          "branch": null,
+          "revision": "ba74a683141fde66d4bf88358b6a678d7e5a27ce",
+          "version": "1.0.1"
         }
       },
       {

@@ -118,7 +118,7 @@ class UNCComedor {
             // For some reason, Kitura encodes a [Date: [String]] dictionary wrong.
             // Using strings as keys instead in the meantime.
             let dateFormatter = ISO8601DateFormatter()
-            dateFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+            dateFormatter.formatOptions = [.withInternetDateTime]
             var uglyMenu: [String: [String]] = [:]
             for (key, value) in menu {
                 uglyMenu[dateFormatter.string(from: key)] = value
@@ -318,7 +318,7 @@ class UNCComedor {
 
             // TODO this is a workaround of an error with Kitura not encoding Date keys properly.
             let dateFormatter = ISO8601DateFormatter()
-            dateFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+            dateFormatter.formatOptions = [.withInternetDateTime]
             var servings: [String: Int] = [:]
             for (key, value) in result {
                 servings[dateFormatter.string(from: key)] = value
