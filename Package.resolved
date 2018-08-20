@@ -119,6 +119,15 @@
         }
       },
       {
+        "package": "KituraOpenAPI",
+        "repositoryURL": "https://github.com/IBM-Swift/Kitura-OpenAPI.git",
+        "state": {
+          "branch": null,
+          "revision": "024622f0bff8f4b6e7536fbdc44c12e39648ea69",
+          "version": "1.0.3"
+        }
+      },
+      {
         "package": "Kitura-TemplateEngine",
         "repositoryURL": "https://github.com/IBM-Swift/Kitura-TemplateEngine.git",
         "state": {
@@ -179,6 +188,15 @@
           "branch": null,
           "revision": "a8eccd530b03c3270b798f05dbd9dc838d21f56c",
           "version": "2.4.0"
+        }
+      },
+      {
+        "package": "SwiftSoup",
+        "repositoryURL": "https://github.com/scinfu/SwiftSoup.git",
+        "state": {
+          "branch": null,
+          "revision": "f445c9067d28346e828e615e2b43cb07b20bca35",
+          "version": "1.7.2"
         }
       },
       {
