@@ -52,6 +52,10 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		5E5DAEAE212B39D200F0C5C6 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DAEAD212B39D200F0C5C6 /* Result.swift */; };
+		5E5DAEB1212B39F700F0C5C6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DAEB0212B39F700F0C5C6 /* User.swift */; };
+		5E5DAEB3212B3A4B00F0C5C6 /* UNCComedor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DAEB2212B3A4B00F0C5C6 /* UNCComedor.swift */; };
+		5E5DAEB5212B3BDC00F0C5C6 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DAEB4212B3BDC00F0C5C6 /* API.swift */; };
 		OBJ_1000 /* CloudFoundryEnv.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "CloudFoundryEnv::CloudFoundryEnv::Product" /* CloudFoundryEnv.framework */; };
 		OBJ_1001 /* Configuration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Configuration::Configuration::Product" /* Configuration.framework */; };
 		OBJ_1002 /* FileKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "FileKit::FileKit::Product" /* FileKit.framework */; };
@@ -382,9 +386,8 @@
 		OBJ_1693 /* MemoryPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_168 /* MemoryPlugin.cpp */; };
 		OBJ_1700 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_172 /* Package.swift */; };
 		OBJ_462 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Application.swift */; };
-		OBJ_463 /* InitializationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* InitializationError.swift */; };
 		OBJ_464 /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* Metrics.swift */; };
-		OBJ_465 /* HealthRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* HealthRoutes.swift */; };
+		OBJ_465 /* Health.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* Health.swift */; };
 		OBJ_467 /* SwiftSoup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftSoup::SwiftSoup::Product" /* SwiftSoup.framework */; };
 		OBJ_468 /* KituraOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "KituraOpenAPI::KituraOpenAPI::Product" /* KituraOpenAPI.framework */; };
 		OBJ_469 /* Health.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Health::Health::Product" /* Health.framework */; };
@@ -2696,6 +2699,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E5DAEAD212B39D200F0C5C6 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		5E5DAEB0212B39F700F0C5C6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5E5DAEB2212B3A4B00F0C5C6 /* UNCComedor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNCComedor.swift; sourceTree = "<group>"; };
+		5E5DAEB4212B3BDC00F0C5C6 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		"CircuitBreaker::CircuitBreaker::Product" /* CircuitBreaker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CircuitBreaker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"CloudEnvironment::CloudEnvironment::Product" /* CloudEnvironment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CloudEnvironment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"CloudFoundryEnv::CloudFoundryEnv::Product" /* CloudFoundryEnv.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CloudFoundryEnv.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2723,7 +2730,6 @@
 		OBJ_116 /* APIConnector.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = APIConnector.cpp; sourceTree = "<group>"; };
 		OBJ_118 /* APIConnector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIConnector.h; sourceTree = "<group>"; };
 		OBJ_119 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = /Users/george/Developer/UNCmorfiServer/UNCmorfiServer.xcodeproj/GeneratedModuleMap/hcapiplugin/module.modulemap; sourceTree = "<group>"; };
-		OBJ_12 /* InitializationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitializationError.swift; sourceTree = "<group>"; };
 		OBJ_122 /* cpuplugin.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = cpuplugin.cpp; sourceTree = "<group>"; };
 		OBJ_124 /* cpuplugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cpuplugin.h; sourceTree = "<group>"; };
 		OBJ_125 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = /Users/george/Developer/UNCmorfiServer/UNCmorfiServer.xcodeproj/GeneratedModuleMap/cpuplugin/module.modulemap; sourceTree = "<group>"; };
@@ -2744,7 +2750,7 @@
 		OBJ_147 /* LibraryUtils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LibraryUtils.cpp; sourceTree = "<group>"; };
 		OBJ_148 /* strUtils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = strUtils.cpp; sourceTree = "<group>"; };
 		OBJ_149 /* sysUtils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = sysUtils.cpp; sourceTree = "<group>"; };
-		OBJ_15 /* HealthRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthRoutes.swift; sourceTree = "<group>"; };
+		OBJ_15 /* Health.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Health.swift; sourceTree = "<group>"; };
 		OBJ_151 /* Plugin.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Plugin.cpp; sourceTree = "<group>"; };
 		OBJ_153 /* Agent.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Agent.cpp; sourceTree = "<group>"; };
 		OBJ_154 /* Bucket.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Bucket.cpp; sourceTree = "<group>"; };
@@ -2774,7 +2780,6 @@
 		OBJ_187 /* RestUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestUtilities.swift; sourceTree = "<group>"; };
 		OBJ_188 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		OBJ_189 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/george/Developer/UNCmorfiServer/.build/checkouts/SwiftyRequest.git-6576371758510018075/Package.swift"; sourceTree = "<group>"; };
-		OBJ_19 /* terraform */ = {isa = PBXFileReference; lastKnownFileType = folder; path = terraform; sourceTree = SOURCE_ROOT; };
 		OBJ_192 /* BreakerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakerError.swift; sourceTree = "<group>"; };
 		OBJ_193 /* Bulkhead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bulkhead.swift; sourceTree = "<group>"; };
 		OBJ_194 /* CircuitBreaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitBreaker.swift; sourceTree = "<group>"; };
@@ -2783,7 +2788,6 @@
 		OBJ_197 /* Monitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monitor.swift; sourceTree = "<group>"; };
 		OBJ_198 /* MonitorCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorCollection.swift; sourceTree = "<group>"; };
 		OBJ_199 /* Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snapshot.swift; sourceTree = "<group>"; };
-		OBJ_20 /* debian */ = {isa = PBXFileReference; lastKnownFileType = folder; path = debian; sourceTree = SOURCE_ROOT; };
 		OBJ_200 /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
 		OBJ_201 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		OBJ_202 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/george/Developer/UNCmorfiServer/.build/checkouts/CircuitBreaker.git-2769702059765205370/Package.swift"; sourceTree = "<group>"; };
@@ -2792,7 +2796,6 @@
 		OBJ_207 /* WSFrameParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSFrameParser.swift; sourceTree = "<group>"; };
 		OBJ_208 /* WSServerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSServerRequest.swift; sourceTree = "<group>"; };
 		OBJ_209 /* WSSocketProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSSocketProcessor.swift; sourceTree = "<group>"; };
-		OBJ_21 /* chart */ = {isa = PBXFileReference; lastKnownFileType = folder; path = chart; sourceTree = SOURCE_ROOT; };
 		OBJ_210 /* WebSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocket.swift; sourceTree = "<group>"; };
 		OBJ_211 /* WebSocketCloseReasonCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketCloseReasonCode.swift; sourceTree = "<group>"; };
 		OBJ_212 /* WebSocketConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketConnection.swift; sourceTree = "<group>"; };
@@ -3609,13 +3612,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E5DAEAF212B39E800F0C5C6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5E5DAEB0212B39F700F0C5C6 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		OBJ_10 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				5E5DAEAF212B39E800F0C5C6 /* Models */,
 				OBJ_11 /* Application.swift */,
-				OBJ_12 /* InitializationError.swift */,
-				OBJ_13 /* Metrics.swift */,
 				OBJ_14 /* Routes */,
+				5E5DAEAD212B39D200F0C5C6 /* Result.swift */,
+				5E5DAEB2212B3A4B00F0C5C6 /* UNCComedor.swift */,
 			);
 			name = Application;
 			path = Sources/Application;
@@ -3809,7 +3821,9 @@
 		OBJ_14 /* Routes */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_15 /* HealthRoutes.swift */,
+				OBJ_13 /* Metrics.swift */,
+				OBJ_15 /* Health.swift */,
+				5E5DAEB4212B3BDC00F0C5C6 /* API.swift */,
 			);
 			path = Routes;
 			sourceTree = "<group>";
@@ -4668,9 +4682,6 @@
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
 				OBJ_16 /* Tests */,
-				OBJ_19 /* terraform */,
-				OBJ_20 /* debian */,
-				OBJ_21 /* chart */,
 				OBJ_22 /* Dependencies */,
 				OBJ_419 /* Products */,
 			);
@@ -5987,6 +5998,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 9999;
+				ORGANIZATIONNAME = "George Alegre";
 			};
 			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "UNCmorfiServer" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -6445,10 +6457,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				5E5DAEB3212B3A4B00F0C5C6 /* UNCComedor.swift in Sources */,
 				OBJ_462 /* Application.swift in Sources */,
-				OBJ_463 /* InitializationError.swift in Sources */,
 				OBJ_464 /* Metrics.swift in Sources */,
-				OBJ_465 /* HealthRoutes.swift in Sources */,
+				5E5DAEAE212B39D200F0C5C6 /* Result.swift in Sources */,
+				5E5DAEB1212B39F700F0C5C6 /* User.swift in Sources */,
+				OBJ_465 /* Health.swift in Sources */,
+				5E5DAEB5212B3BDC00F0C5C6 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
