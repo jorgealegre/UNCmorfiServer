@@ -9,5 +9,6 @@ struct User: Codable {
     let code: String
     let balance: Int
     let imageCode: String
-//    let expirationDate: Date
+    let expirationDate: String
+    let type: String
 }

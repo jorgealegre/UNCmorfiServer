@@ -184,11 +184,25 @@ class UNCComedor {
                 var _24 = components[24]
                 _24 = String(_24[_24.index(_24.startIndex, offsetBy: 4)..._24.index(_24.startIndex, offsetBy: _24.count - 2)])
 
+                var _8 = components[8]
+                _8 = String(_8[_8.index(_8.startIndex, offsetBy: 4)..._8.index(_8.endIndex, offsetBy: -2)])
+
+                var _4 = components[4]
+                _4 = String(_4[_4.index(_4.startIndex, offsetBy: 12)..._4.index(_4.endIndex, offsetBy: -2)])
+                _4 = _4.components(separatedBy: ", ").joined(separator: "-")
+
                 let name = "\(_16) \(_17)"
                 let balance = Int(_5)!
                 let image = _24
+                let type = _8
+                let expirationDate = _4
 
-                let user = User(name: name, code: code, balance: balance, imageCode: image)
+                let user = User(name: name,
+                                code: code,
+                                balance: balance,
+                                imageCode: image,
+                                expirationDate: expirationDate,
+                                type: type)
 
                 callback(.success(user))
             }
