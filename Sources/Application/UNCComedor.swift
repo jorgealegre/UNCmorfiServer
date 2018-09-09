@@ -22,6 +22,7 @@ class UNCComedor {
     private static let baseDataURL = "http://comedor.unc.edu.ar/gv-ds.php"
     private static let baseMenuURL = URL(string: "https://www.unc.edu.ar/vida-estudiantil/men%C3%BA-de-la-semana")!
     private static let baseServingsURL = URL(string: "http://comedor.unc.edu.ar/gv-ds.php?json=true&accion=1&sede=0475")!
+    private static let baseImageURL = URL(string: "https://asiruws.unc.edu.ar/foto/")!
 
     // MARK: Errors
 
@@ -189,20 +190,27 @@ class UNCComedor {
 
                 var _4 = components[4]
                 _4 = String(_4[_4.index(_4.startIndex, offsetBy: 12)..._4.index(_4.endIndex, offsetBy: -2)])
-                _4 = _4.components(separatedBy: ", ").joined(separator: "-")
+                _4 = _4.components(separatedBy: ", ").joined(separator: "-") + "T00:00:00Z"
 
                 let name = "\(_16) \(_17)"
                 let balance = Int(_5)!
                 let image = _24
                 let type = _8
-                let expirationDate = _4
+                let imageURL = UNCComedor.baseImageURL.appendingPathComponent(_24)
+
+                let dateFormatter = ISO8601DateFormatter()
+                dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+                dateFormatter.formatOptions = [.withInternetDateTime]
+                let expirationDate = dateFormatter.date(from: _4)!
+                let expirationDateString = dateFormatter.string(from: expirationDate)
 
                 let user = User(name: name,
                                 code: code,
                                 balance: balance,
                                 imageCode: image,
-                                expirationDate: expirationDate,
-                                type: type)
+                                expirationDate: expirationDateString,
+                                type: type,
+                                imageURL: imageURL)
 
                 callback(.success(user))
             }
