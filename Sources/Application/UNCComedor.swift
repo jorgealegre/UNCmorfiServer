@@ -82,9 +82,11 @@ class UNCComedor {
 
             // Try to parse HTML and find the elements we care about.
             let elements: Elements
+            let monthYear: String
             do {
                 let doc = try SwiftSoup.parse(dataString)
-                elements = try doc.select("div[class='field-item even']").select("ul")
+                elements = try doc.select("div[class='field-item even']")
+                monthYear = try elements.select("div[class='tabla_title']").text().components(separatedBy: "-")[1]
             } catch {
                 callback(.failure(APIError.menuUnparseable))
                 return
@@ -94,22 +96,25 @@ class UNCComedor {
             // Prefer to not show anything or parse wrongly than to crash.
             var menu: [Date: [String]] = [:]
 
-            // Whatever week we're in, find monday.
-            let startingDay = Calendar(identifier: .iso8601)
-                .date(from: Calendar(identifier: .iso8601)
-                    .dateComponents([.yearForWeekOfYear, .weekOfYear], from: Date()))!
+            let formatter = DateFormatter()
+            formatter.dateFormat = "MMMM yyyy dd"
+            formatter.locale = Locale(identifier: "es_AR")
 
             // For each day, parse the menu.
             do {
-                for (index, element) in elements.enumerated() {
-                    let listItems: [Element] = try element.select("li").array()
+                for (day, list) in zip(try elements.select("p"), try elements.select("ul")) {
+                    let dayNumber = try day.text()
+                        .components(separatedBy:CharacterSet.decimalDigits.inverted)
+                        .joined(separator: "")
+
+                    let listItems: [Element] = try list.select("li").array()
 
                     let foodList = listItems
                         .compactMap { try? $0.text() }
                         .filter { !$0.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }
 
-                    let day = startingDay.addingTimeInterval(TimeInterval(index * 24 * 60 * 60))
-                    menu[day] = foodList
+                    let date = formatter.date(from: "\(monthYear) \(dayNumber)")!
+                    menu[date] = foodList
                 }
             } catch {
                 callback(.failure(APIError.menuUnparseable))
