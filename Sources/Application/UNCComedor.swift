@@ -103,7 +103,7 @@ class UNCComedor {
 
             // For each day, parse the menu.
             do {
-                for (day, list) in zip(try elements.select("p"), try elements.select("ul")) {
+                for (day, list) in zip(try elements.select("p strong"), try elements.select("ul")) {
                     let dayNumber = try day.text()
                         .components(separatedBy:CharacterSet.decimalDigits.inverted)
                         .joined(separator: "")
