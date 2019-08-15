@@ -34,6 +34,7 @@ class UNCComedor {
         case dataDecodingError
 
         case menuUnparseable
+        case userUnparseable
         case servingDateUnparseable
         case servingCountUnparseable
     }
@@ -102,7 +103,7 @@ class UNCComedor {
 
             // For each day, parse the menu.
             do {
-                for (day, list) in zip(try elements.select("p"), try elements.select("ul")) {
+                for (day, list) in zip(try elements.select("p strong"), try elements.select("ul")) {
                     let dayNumber = try day.text()
                         .components(separatedBy:CharacterSet.decimalDigits.inverted)
                         .joined(separator: "")
@@ -173,9 +174,14 @@ class UNCComedor {
                 // Parse the data.
                 let preffix = "rows: [{c: ["
                 let suffix = "]}]}});"
-                let preffixIndex = dataString.range(of: preffix)!.upperBound
-                let suffixIndex = dataString.range(of: suffix)!.lowerBound
 
+                guard
+                    let preffixIndex = dataString.range(of: preffix)?.upperBound,
+                    let suffixIndex = dataString.range(of: suffix)?.lowerBound
+                else {
+                    callback(.failure(APIError.userUnparseable))
+                    return
+                }
                 let components = dataString[preffixIndex..<suffixIndex].components(separatedBy: "},{")
 
                 var _16 = components[16]
