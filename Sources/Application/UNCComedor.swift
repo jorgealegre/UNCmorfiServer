@@ -19,9 +19,9 @@ class UNCComedor {
 
     // MARK: API endpoints
 
-    private static let baseDataURL = "http://comedor.unc.edu.ar/gv-ds.php"
+    private static let baseDataURL = "https://comedor.unc.edu.ar/gv-ds.php"
     private static let baseMenuURL = URL(string: "https://www.unc.edu.ar/vida-estudiantil/men%C3%BA-de-la-semana")!
-    private static let baseServingsURL = URL(string: "http://comedor.unc.edu.ar/gv-ds.php?json=true&accion=1&sede=0475")!
+    private static let baseServingsURL = URL(string: "https://comedor.unc.edu.ar/gv-ds.php?accion=1&sede=0475")!
     private static let baseImageURL = URL(string: "https://asiruws.unc.edu.ar/foto/")!
 
     // MARK: Errors
