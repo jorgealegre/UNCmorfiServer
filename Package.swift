@@ -1,21 +1,42 @@
-// swift-tools-version:4.0
+// swift-tools-version:5.5
 import PackageDescription
 
 let package = Package(
-    name: "UNCmorfiServer",
+    name: "UNCmorfi",
+    platforms: [
+       .macOS(.v12)
+    ],
     dependencies: [
-      .package(url: "https://github.com/IBM-Swift/Kitura.git", from: "2.4.0"),
-      .package(url: "https://github.com/IBM-Swift/HeliumLogger.git", from: "1.7.1"),
-      .package(url: "https://github.com/IBM-Swift/CloudEnvironment.git", from: "8.0.0"),
-      .package(url: "https://github.com/RuntimeTools/SwiftMetrics.git", from: "2.0.0"),
-      .package(url: "https://github.com/IBM-Swift/Health.git", from: "1.0.0"),
-      .package(url: "https://github.com/scinfu/SwiftSoup.git", from: "1.5.10"),
-      .package(url: "https://github.com/IBM-Swift/Kitura-OpenAPI.git", from: "1.0.3")
+        .package(url: "https://github.com/scinfu/SwiftSoup.git", from: "1.7.4"),
+        .package(url: "https://github.com/vapor/vapor.git", from: "4.0.0"),
     ],
     targets: [
-      .target(name: "UNCmorfiServer", dependencies: [.target(name: "Application"), "Kitura" , "HeliumLogger"]),
-      .target(name: "Application", dependencies: ["Kitura", "CloudEnvironment", "SwiftMetrics", "Health", "KituraOpenAPI", "SwiftSoup"]),
+        .executableTarget(
+            name: "Run",
+            dependencies: [
+                .target(name: "Server")
+            ]
+        ),
 
-      .testTarget(name: "ApplicationTests" , dependencies: [.target(name: "Application"), "Kitura","HeliumLogger"])
+        .target(
+            name: "Server",
+            dependencies: [
+                .product(name: "Vapor", package: "vapor"),
+                "SwiftSoup"
+            ],
+            swiftSettings: [
+                // Enable better optimizations when building in Release configuration. Despite the use of
+                // the `.unsafeFlags` construct required by SwiftPM, this flag is recommended for Release
+                // builds. See <https://github.com/swift-server/guides/blob/main/docs/building.md#building-for-production> for details.
+                .unsafeFlags(["-cross-module-optimization"], .when(configuration: .release))
+            ]
+        ),
+        .testTarget(
+            name: "ServerTests",
+            dependencies: [
+                .target(name: "Server"),
+                .product(name: "XCTVapor", package: "vapor"),
+            ]
+        )
     ]
 )

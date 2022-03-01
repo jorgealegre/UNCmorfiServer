@@ -1,9 +1,9 @@
-.DS_Store
-/.build
-/.build-ubuntu
-/Packages
-/config.json
-/spec.json
-./config/localdev-config.json
-
+Packages
+.build
 xcuserdata
+*.xcodeproj
+DerivedData/
+.DS_Store
+db.sqlite
+.swiftpm
+
